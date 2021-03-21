@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "pmbd-app": {
+    "sgmbd-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/pmbd-app",
+            "outputPath": "dist/sgmbd-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,9 +24,13 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -61,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "pmbd-app:build"
+            "browserTarget": "sgmbd-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "pmbd-app:build:production"
+              "browserTarget": "sgmbd-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "pmbd-app:build"
+            "browserTarget": "sgmbd-app:build"
           }
         },
         "test": {
@@ -109,16 +113,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "pmbd-app:serve"
+            "devServerTarget": "sgmbd-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "pmbd-app:serve:production"
+              "devServerTarget": "sgmbd-app:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "pmbd-app"
+  "defaultProject": "sgmbd-app"
 }
